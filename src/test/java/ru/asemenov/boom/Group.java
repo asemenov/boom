@@ -5,4 +5,5 @@ package ru.asemenov.boom;
  */
 public class Group {
     public static final String Acceptance = "acceptance";
+    public static final String Dao = "dao";
 }

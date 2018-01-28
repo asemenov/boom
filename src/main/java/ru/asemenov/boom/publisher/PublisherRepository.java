@@ -1,4 +1,4 @@
-package ru.asemenov.boom.hero;
+package ru.asemenov.boom.publisher;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
@@ -10,9 +10,8 @@ import java.util.List;
 /**
  * @author a.semenov
  */
-@RepositoryRestResource(collectionResourceRel = "items", path = "heroes", excerptProjection = ShortHeroProjection.class)
-public interface HeroRepository extends PagingAndSortingRepository<Hero, Long> {
-
+@RepositoryRestResource(collectionResourceRel = "items", path = "publishers")
+public interface PublisherRepository extends PagingAndSortingRepository<Publisher, Long> {
     @RestResource(path = "byName", rel = "items")
-    List<Hero> findByName(@Param("name") String name);
+    List<Publisher> findByName(@Param("name") String name);
 }

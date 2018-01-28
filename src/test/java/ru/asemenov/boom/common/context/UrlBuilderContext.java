@@ -2,7 +2,8 @@ package ru.asemenov.boom.common.context;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.joining;
 
 /**
  * @author a.semenov
@@ -15,7 +16,7 @@ public class UrlBuilderContext implements BuilderContext<String> {
         return values.entrySet().stream()
                 .filter(e -> e.getValue() != null)
                 .map(e -> e.getKey() + "=" + e.getValue())
-                .collect(Collectors.joining("&"));
+                .collect(joining("&"));
     }
 
     @Override
